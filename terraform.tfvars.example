@@ -1,0 +1,97 @@
+
+#cidr_block = ""
+region = "us-east-1"
+
+bucket_name_prefix = {
+  prod = "prod",
+  stag = "stag",
+  test = "test"
+}
+
+domain = {
+  admin = "admin.local",
+  api   = "api.local"
+}
+
+container_image = {
+  frontend  = "ecr-frontend-admin-repo",
+  backend   = "ecr-backend-api-repo"
+}
+
+
+container_cpu    = "256"
+container_memory = "512"
+
+task_definition_name = {
+  frontend  = "admin",
+  backend   = "api"
+}
+
+container_port = {
+  frontend  = "8000",
+  backend   = "8000"
+}
+
+container_insight_status = {
+  enable  = "enabled",
+  disable = "disabled"
+}
+
+ecs_service_launch_type = {
+  fargate = "FARGATE",
+  ec2     = "EC2"
+}
+
+ecs_service_strategy = {
+  replica = "REPLICA",
+  daemon  = "DAEMON"
+}
+
+ecs_service_desired_count = {
+  frontend  = "1",
+  backend   = "1"
+}
+
+ecr_tag = {
+  latest = "latest",
+  dev    = "dev"
+}
+
+ecs_service_max_capacity = "2"
+ecs_service_min_capacity = "1"
+adjustment_type = {
+  changein        = "ChangeInCapacity",
+  exact           = "ExactCapacity",
+  percentchangein = "PercentChangeInCapacity"
+}
+
+metric_aggregation_type = {
+
+  min = "Minimum",
+  max = "Maximum",
+  avg = "Average"
+
+}
+
+scale_up_alarm = {
+  frontend  = "frontend-scale-up",
+  backend   = "backend-scale-up"
+ 
+}
+scale_down_alarm = {
+  frontend  = "frontend-scale-down",
+  backend   = "backend-scale-down"
+}
+
+db_username = "admin"
+db_password = "4PJDvsqG3M4U6haA"
+db_name     = "mydemo"
+
+//mine
+aws_access_key = "AKIA2B2D"
+aws_secret_key = "VTLZF4IAwUa5f"
+
+alb_tls_cert_arn       = "arn:aws:acm:us-east-1:xxxxx:certificate/7471d34e-9271-401a-aa8b-7811768b5139"
+
+#ECS_Service_Scale_Role = "arn:aws:iam::xxxxx:role/aws-service-role/ecs.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_ECSService"
+ECS_Service_Scale_Role = "arn:aws:iam::xxxxx:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS"
